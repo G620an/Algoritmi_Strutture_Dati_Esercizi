@@ -34,6 +34,8 @@ class LCS:
         s.reverse()
         return s
 
+        
+
 
 
 
