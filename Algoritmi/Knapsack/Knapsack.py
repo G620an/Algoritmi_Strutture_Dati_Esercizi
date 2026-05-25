@@ -4,37 +4,45 @@ class Knapsack:
 
     def calcola(i:list , v:list, w:int):
         n = len(i)
-        for _ in range(n): m.append([0]*w)
-        for W in range(w):
-            k = 0
-            for peso in i:
-                m[peso, W] = max((m[peso-1][W] if peso>W else 0) , m[peso-1][W] , m[peso-1][W-peso]+v[k])
-                k *= 1
+        m = []
+        for _ in range(n+1):
+            r = []
+            for _ in range(w+1):
+                r.append(0)
+            m.append(r)
+
+        for W in range(1 , w+1):
+            for k in range(1, n+1):
+                m[k][W] = max((m[k-1][W] if i[k-1]>W else 0) , m[k-1][W] , m[k-1][W-i[k-1]]+v[k-1])
         return m
 
     def riempiZaino(i:list , v:list , w:int):
-        m = calcola(i , v , w)
+        m = Knapsack.calcola(i , v , w)
         z = []
-        k = len(i) - 1
-        j = w-1 
+        k = len(i)
+        j = w
         while k > 0 and j > 0:
             f = m[k][j]
-            if m[k-1][j-i[k]]+v[k] > m[k-1][j]:
-                z.append(k)
-                j -= i[k]
+            if f > m[k-1][j-i[k-1]]: #Torniamo indietro seguento il contrario della max del calcola
+                z.append(k-1)
+                j -= i[k-1]
+                k -= 1
             else:
                 k -= 1
         z.reverse()
         return z
     
     def maxVantaggio(i:list, v:list, w:int):
-        return calcola(i,v,w)[len(i)-1][w-1]
-
+        m = Knapsack.calcola(i,v,w)
+        return m[len(i)][w]
 
 
 if __name__ == "__main__":
-    i = [1, 4, 0, 3, 6]
+    i = [1, 4, 5, 3, 6]
     v = [9, 4, 1, 8, 5]
     w = 12
-    print("Massimo vantaggio: " + Knapsack.maxVantaggio(i, v, w))
-    print(Knapsack.calcola(i, v, w))
+    print("Massimo vantaggio: " + str(Knapsack.maxVantaggio(i, v, w)))
+    m = Knapsack.calcola(i, v, w)
+    for riga in m:
+        print(riga)
+    print(Knapsack.riempiZaino(i, v, w))
