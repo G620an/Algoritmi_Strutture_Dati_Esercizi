@@ -1,1 +1,1 @@
-# Algoritmi_Strutture_Dati_Esercizi
+# Algoritmi_Strutture_Dati
