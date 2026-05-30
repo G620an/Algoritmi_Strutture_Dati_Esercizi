@@ -35,11 +35,6 @@ class LCS:
         return s
 
         
-
-
-
-
-
 if __name__=="__main__":
     s1 = "provoprovinoafarlorompere"
     s2 = "abcdefgh"
