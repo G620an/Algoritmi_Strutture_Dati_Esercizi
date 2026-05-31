@@ -21,15 +21,15 @@ class Backtracking():
         #Se true la soluzione corrente è completa
         pass
 
-    def costruisciSoluziones(self, l): #Costruisce la soluzione ripercorrendo il percorso delle scelte
+    def costruisciSoluzione(self, l): #Costruisce la soluzione ripercorrendo il percorso delle scelte
         pass
 
     def risolvi(self): #Schema di risoluzione generale del backtracking
-        l = 1
-        rivedi = False #Se lo metto a true significa che devo tornare indietr
-        if not self.primaScelta: #Non ho scelte da fare
+        l = 0
+        rivedi = False #Se lo metto a true significa che devo tornare indietro
+        if not self.primaScelta(l): #Non ho scelte da fare restituisco false
             return False
-        while l >=0:
+        while l >= 0:
             if self.verificaVincoli(l):
                 if self.soluzioneCompleta(l):
                     self.costruisciSoluzione(l)
@@ -41,11 +41,11 @@ class Backtracking():
                 #Vincolo non più verificato
                 if not self.successivaScelta(l):
                     rivedi = True
-        while rivedi and l>=0:
-            l -= 1
-            if self.successivaScelta(l):
-                rivedi = False
-            return False
+            while rivedi and l>=0:
+                l -= 1
+                if self.successivaScelta(l):
+                    rivedi = False
+        return False
             
 
         
