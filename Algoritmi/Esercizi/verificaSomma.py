@@ -4,7 +4,7 @@ from Alberi.Albero import Albero
 
 def verificaSomma(a:Albero, l:int):
     if a is None:
-        return False
+        return True
     sl = 0; sf = 0
     somma(a, 0, l, sl, sf)
     return sl == sf
