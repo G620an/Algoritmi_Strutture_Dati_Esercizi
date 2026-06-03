@@ -6,22 +6,24 @@
 #Vincolo -> Il colore del nodo livello deve essere diverso dai suoi adiacenti
 #Soluzione -> Una lista  che va da 0->n dove per ogni valore (ID nodo) abbiamo il colore
 
-from Backtracking import Backtracking
+from Backtracking.Backtracking import Backtracking
 from Grafo.Grafo import Grafo
 from Grafo.GeneraGrafo import GeneraGrafo
 
 class Coloratore(Backtracking):
-    def __init__(self, G:Grafo):
+    def __init__(self, G:Grafo, colori = ['R', 'G', 'B']):
         super().__init__()
-        self.colori = ['R','V','B'] #Rosso Verde e Blue
+        self.colori = colori #Rosso Verde e Blue default
         self.G = G
-        self.listaColori = ['']*G.n
+        self.listaColori = ['']*G.n #Volendo possiamo usare anche numeri per semplificare
 
-    def primaScelta(self, l:int):
+    def primaScelta(self, l:int)->bool:
+        if l == self.G.n:
+            return False
         self.listaColori[l] = 'R'
         return True
     
-    def successivaScelta(self, l:int):
+    def successivaScelta(self, l:int)->bool:
         if self.listaColori[l] == '':
             self.listaColori[l] = 'R'
             return True
@@ -35,19 +37,19 @@ class Coloratore(Backtracking):
             return False
         return False
 
-    def verificaVincoli(self, l:int):
-        for nodo in self.G.getAdiacenza(l):
-            if self.listaColori[l] == '':
+    def verificaVincoli(self, l:int)->bool:
+        for nodo in self.G.getAdiacenza(l): #Ha senso fare getAdiacenza perchè è tetha di n e quindi alla fine la complessità non cambia
+            if self.listaColori[l] == '':   #rimane tetha di n per questo metodo di verifica
                 continue
             if self.listaColori[l] == self.listaColori[nodo]: #Verifica se un vicino ha lo stesso colore
                 return False
         return True
 
-    def soluzioneCompleta(self, l:int):
+    def soluzioneCompleta(self, l:int)->bool:
         if l+1 == self.G.n: return True
         return False
     
-    def costruisciSoluzione(self, l:int):
+    def costruisciSoluzione(self, l:int)->bool:
         return
     
     def coloraGrafo(self):
