@@ -19,7 +19,7 @@ def somma(a:Albero, h:int, l:int, sl, sf):
     somma(a.sx, h+1, l, sl, sf)
     somma(a.dx, h+1, l, sl, sf)
 
-#Analisi di complessità
-#CTP(n) == CTM(n) = Qualsiasi tipo di albero, dobbiamo scorrere tutti i nodi (nessuno sconto) tetha(n)
-#CSP(n) = Albero degenere sx e quindi n record di attivazione tutti attivi sulla somma(a.sx...) tetha(n)
-#CSM(n) = Albero bilanciato e quindi al più log(n) record di attivazione attivi contemporaneamente tetha(log(n))
+#Analisi di complessità:
+    #CTP(n) == CTM(n) = Qualsiasi tipo di albero, dobbiamo scorrere tutti i nodi (nessuno sconto) tetha(n)
+    #CSP(n) = Albero degenere (a sx) e quindi n record di attivazione tutti attivi sulla somma(a.sx...) tetha(n)
+    #CSM(n) = Albero bilanciato e quindi al più log(n) record di attivazione attivi contemporaneamente tetha(log(n))
