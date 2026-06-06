@@ -6,8 +6,8 @@
 def distanza(G,s):
     dist = [float('inf') for i in range(G.n)]
     dist[s] = 0 #distanza da se stesso
-    albero = Dijkstra.calcola(G,s)
-    for padre,nodo,distanza in albero: #restituisce una terna
+    AlberoBinario = Dijkstra.calcola(G,s)
+    for padre,nodo,distanza in AlberoBinario: #restituisce una terna
         dist[nodo] = distanza
     return dist
 

@@ -1,5 +1,5 @@
-#Devo verificare se esiste almeno un nodo per cui vale che tutti gli elementi nel sottoalbero sx ci sono tutti gli 
-#elementi del sottoalbero dx
+#Devo verificare se esiste almeno un nodo per cui vale che tutti gli elementi nel sottoAlberoBinario sx ci sono tutti gli 
+#elementi del sottoAlberoBinario dx
 
 def esisteNodo(A):
     if A is None: return False
@@ -24,9 +24,9 @@ def esiste(val , a):
 
 #CTM = n (la radice è un nodo non foglia e vle subito l'esisteNodo)
 
-#CSM = 1 (pari ai record fatti per cercare all'interno dell'albero per verificare subito esisteNodo) esco subito
+#CSM = 1 (pari ai record fatti per cercare all'interno dell'AlberoBinario per verificare subito esisteNodo) esco subito
 
-#CTP = da fare con teorema divide et impera d=2 c=2 a=2 siamo nel caso n^d cio n^2 nel caso albero completo dove
+#CTP = da fare con teorema divide et impera d=2 c=2 a=2 siamo nel caso n^d cio n^2 nel caso AlberoBinario completo dove
 #non si presenta questo elemento
 
 #CSP = solo valore a sx e degenere a dx la proprietà è verificata e sono attivi -n- record di attivazione

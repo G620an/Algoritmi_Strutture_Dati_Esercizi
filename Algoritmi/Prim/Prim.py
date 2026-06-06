@@ -8,7 +8,7 @@ class Prim:
         r = Random()
         n = g.n
         x = r.nextInt(n)
-        A = Albero(x)
+        A = AlberoBinario(x)
         for _ in range(n):
             min = -1
             for a in g.getAdiacenza(x):
