@@ -37,8 +37,8 @@ class AlberoBinario:
             n = s.pop()
             if n.info == value:
                 return n
-            s.push(dx)
-            s.push(sx)
+            s.push(n.dx)
+            s.push(n.sx)
         return Nodo(None)
     
     def dx(self):
@@ -69,6 +69,7 @@ class AlberoBinario:
             else:
                 n.genitore.sx = x
             self.rimuovi(x)
+        return True
     
     def __iter__(self):
         return Iter(self)
@@ -76,7 +77,7 @@ class AlberoBinario:
 class Iter:
     def __init__(self, a:AlberoBinario):
         self.a = a
-        if a._radice is None: raise ValueErro("AlberoBinario Vuoto!")
+        if a._radice is None: raise ValueError("AlberoBinario Vuoto!")
         self.hasNext = False
         self.corrente = a._radice
         while self.corrente.sx is not None: self.corrente = self.corrente.sx
@@ -84,7 +85,7 @@ class Iter:
     
     def __next__(self):
         self.posiziona()
-        if not hasNext:
+        if not self.hasNext:
             raise StopIteration()
         else:
             self.direzione = 2
