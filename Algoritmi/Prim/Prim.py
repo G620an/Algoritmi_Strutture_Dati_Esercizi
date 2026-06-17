@@ -1,10 +1,13 @@
-import Random
+from random import Random
+from Alberi.AlberoBinario import AlberoBinario
+from Grafo.Grafo import Grafo
+from Grafo.GeneraGrafo import GeneraGrafo
 
 class Prim:
     def __init__(self):
         pass
     
-    def calcola(g):
+    def calcola(g:Grafo):
         r = Random()
         n = g.n
         x = r.nextInt(n)
@@ -17,5 +20,13 @@ class Prim:
                     min = a.peso
             A.aggiungi(x)
         return A
+
+
+if __name__ == '__main__':
+    g = Grafo()
+    gen = GeneraGrafo(g,3)
+    h = gen.genera(10)
+    prim = Prim().calcola(h)
+    print(prim)
 
 

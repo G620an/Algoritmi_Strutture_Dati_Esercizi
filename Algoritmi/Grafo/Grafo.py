@@ -62,4 +62,11 @@ class Grafo():
             return 0
         return self._m[x][y]
 
+    def testAciclicità(self):
+        pass
+
+    def contaComponentiMassimalico(self):
+        pass
+
+
     
