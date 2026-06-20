@@ -1,19 +1,32 @@
 import numpy as np
 
-class Ramo():
+class Ramo:
     def __init__(self, x, y, peso):
         self.x = x
         self.y = y
         self.peso = peso
 
+    def __gt__(self, other):
+        return self.peso > other.peso
+    def __lt__(self, other):
+        return self.peso < other.peso
+    def __eq__(self, other):
+        return self.peso == other.peso
+    def __ne__(self, other):
+        return self.peso != other.peso
+    def __ge__(self, other):
+        return self.peso >= other.peso
+    def __le__(self, other):
+        return self.peso <= other.peso
+
 class Grafo():
     def __init__(self, maxN = 256):
         self._maxN = maxN
-        self._m = np.zeros((self._maxN, self._maxN))
-        self._nodi = []
-        self._rami = []
-        self.n = 0
-        self.m = 0
+        self._m = np.zeros((self._maxN, self._maxN)) #Matrice di incidenza
+        self._nodi = [] #Lista nodi
+        self._rami = [] #Lista rami
+        self.n = 0 #Numero nodi
+        self.m = 0 #Numero rami
 
     def inserisciNodo(self, info, index:int, peso:int):#index indice nodo a cui collegarlo
         self._nodi.append(info)
@@ -67,6 +80,9 @@ class Grafo():
 
     def contaComponentiMassimalico(self):
         pass
+
+    def getArchi(self):
+        return self._rami
 
 
     

@@ -37,12 +37,12 @@ class UFF:
         if xn.h >= yn.h:
             self._inserisci(xn, yn)
             self._set[x].h += hy
-            self._set[y] = None
+            #self._set[y] = None
         else:
             self._inserisci(yn, xn)
             self._set[x] = yn
             self._set[x].h += hx
-            self._set[y] = None
+            #self._set[y] = None
         self._genitori[y] = self._genitori[x]
         self._n -= 1
         return self._set[x]
