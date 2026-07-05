@@ -78,6 +78,7 @@ class Grafo():
     def testAciclicità(self):
         pass
 
+
     def contaComponentiMassimalico(self):
         pass
 
