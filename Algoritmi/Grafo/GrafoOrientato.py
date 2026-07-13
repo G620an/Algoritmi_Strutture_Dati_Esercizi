@@ -11,7 +11,7 @@ class GrafoOrientato:
         self._archi = []
 
     def inserisciNodo(self, info, indexCollegamento:int, peso):
-        r = Ramo(info, self.getNodo(indexCollegamento, peso)
+        pass
 
     def getNodo(self, index:int):
         return self._nodi[index]

@@ -20,6 +20,6 @@ def somma(a:AlberoBinario, h:int, l:int, sl, sf):
     somma(a.dx, h+1, l, sl, sf)
 
 #Analisi di complessità:
-    #CTP(n) == CTM(n) = Qualsiasi tipo di AlberoBinario, dobbiamo scorrere tutti i nodi (nessuno sconto) tetha(n)
-    #CSP(n) = AlberoBinario degenere (a sx) e quindi n record di attivazione tutti attivi sulla somma(a.sx...) tetha(n)
-    #CSM(n) = AlberoBinario bilanciato e quindi al più log(n) record di attivazione attivi contemporaneamente tetha(log(n))
+    #CTP(n) == CTM(n) = Qualsiasi tipo di AlberoBinario, dobbiamo scorrere tutti i nodi (nessuno sconto) theta(n)
+    #CSP(n) = AlberoBinario degenere (a sx) e quindi n record di attivazione tutti attivi sulla somma(a.sx...) theta(n)
+    #CSM(n) = AlberoBinario bilanciato e quindi al più log(n) record di attivazione attivi contemporaneamente theta(log(n))

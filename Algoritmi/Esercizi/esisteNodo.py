@@ -1,10 +1,10 @@
 #Devo verificare se esiste almeno un nodo per cui vale che tutti gli elementi nel sottoAlberoBinario sx ci sono tutti gli 
 #elementi del sottoAlberoBinario dx
 
-def esisteNodo(A):
-    if A is None: return False
-    if A.dx is None and a.sx is None: return False
-    return compare(A.sx, A.dx) or esisteNodo(A.sx) or eisteNodo(A.dx)
+def esisteNodo(a):
+    if a is None: return False
+    if a.dx is None and a.sx is None: return False
+    return compare(a.sx, a.dx) or esisteNodo(a.sx) or esisteNodo(a.dx)
 
 
 def compare(sx , dx): #due alberi
@@ -22,7 +22,7 @@ def esiste(val , a):
 
 #Analisi della complessità:
 
-#CTM = n (la radice è un nodo non foglia e vle subito l'esisteNodo)
+#CTM = n (la radice è un nodo non foglia e vale subito l'esisteNodo)
 
 #CSM = 1 (pari ai record fatti per cercare all'interno dell'AlberoBinario per verificare subito esisteNodo) esco subito
 

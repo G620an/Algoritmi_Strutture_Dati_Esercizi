@@ -5,7 +5,7 @@ class Dijktra:
     def __init__(self):
         pass
 
-    def dijktra(g:Grafo, radice:int):
+    def calcola(g:Grafo, radice:int):
         if radice >= g.n or radice < 0:
             raise ValueError("Indice non valido")
 
