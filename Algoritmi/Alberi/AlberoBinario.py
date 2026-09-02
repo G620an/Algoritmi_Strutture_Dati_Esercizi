@@ -31,7 +31,7 @@ class AlberoBinario:
         self._len += 1
     
     def cercaNodo(self, value):
-        s = Stack()
+        s = None#Stack()
         s.push(self._radice)
         while len(s) > 0:
             n = s.pop()
@@ -40,7 +40,13 @@ class AlberoBinario:
             s.push(n.dx)
             s.push(n.sx)
         return Nodo(None)
-    
+
+    def info(self):
+        return self._radice.info
+
+    def gen(self):
+        return self._radice.genitore
+
     def dx(self):
         return AlberoBinario(self._radice.dx)
     
