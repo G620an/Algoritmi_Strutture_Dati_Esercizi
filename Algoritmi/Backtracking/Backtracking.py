@@ -2,7 +2,7 @@
 
 #Costruzione generale del backtracking
 
-#1° scelta su un livello, restituisce la prima scelta su un livell
+#1° scelta su un livello, restituisce la prima scelta su un livello
 class Backtracking():
     def __init__(self):
         pass
