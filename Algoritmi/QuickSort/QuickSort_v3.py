@@ -1,23 +1,23 @@
 
 def partiziona(lista, low:int, high:int):
-    pivot = lista[-1]
+    pivot = lista[high]
     i = low - 1 #per avere lo spazio di inserimento
     for j in range(low, high):
-        if lista[j] <= pivot:
+        if lista[j] < pivot:
             i += 1
             temp = lista[j]
             lista[j] = lista[i]
             lista[i] = temp
 
-    temp = lista[i+1]
+    lista[high] = lista[i+1]
     lista[i+1] = pivot
-    lista[-1] = temp
+
     return i + 1
 
 def QuickSort(lista, low:int, high:int):
     while low < high:
         pivotIndex = partiziona(lista, low, high)
-        if pivotIndex - low < high - low:
+        if pivotIndex - low < high - pivotIndex:
             QuickSort(lista[:pivotIndex], low, pivotIndex-1)
             low = pivotIndex + 1
         else:
