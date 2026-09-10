@@ -64,6 +64,9 @@ class Grafo():
     def getPeso(self, x:int, y:int):
         return self._m[x][y]
 
+    def esisteArco(self, x:int, y:int):
+        return self._m[x][y] != 0
+
     def getPesoNodo(self, xNodo:int, yNodo:int):
         x = -1 ; y = -1
         for i in range(self.n):

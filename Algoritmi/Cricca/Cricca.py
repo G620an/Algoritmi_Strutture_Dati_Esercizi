@@ -1,4 +1,6 @@
-from operator import truediv
+
+#Una cricca è un insieme di nodi di un grafo, per cui vale che:
+#ogni nodo è collegato direttamente con un arco agli altri nodi
 
 from Backtracking.Backtracking import Backtracking
 from Grafo.Grafo import Grafo
